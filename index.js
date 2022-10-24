@@ -1,6 +1,26 @@
-const sum = (2 + 2) * 6;
-console.log(sum);
+/*Задача 1*/
+a = 3;
+b = 6;
+n = 8;
 
+if (b % 2 === 0) {
+    n += 5;
+} else {
+    a = 15;
+}
 
-const hello = 'Маша сказала \n"привет\"';
-console.log(hello);
+console.log(a, b, n);
+
+/*Задача 6*/
+let a = 50; // бажана ЗП
+let b = 100; // кількість рядків
+let c = 3; // кількість запізнень
+let e = 20; // розмір штрафу
+
+if (a <= c);
+console.log('вірно');
+
+if (c / 50 * 100) + (e / 3 * 20);
+console.log('40');
+
+if (a / 2 <= c);
