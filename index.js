@@ -1,26 +1,11 @@
-/*Задача 1*/
-a = 3;
-b = 6;
-n = 8;
+//alert('Hello'); //
 
-if (b % 2 === 0) {
-    n += 5;
+let a = Number(prompt('Введіть перше число')); // Вікно з формой для вводу певного рядка
+let b = Number(prompt('Введіть друге число'));
+let result = 4 + 5;
+
+if(Number.isNaN(result)) {
+    console.log('Ти не правий, введи число!');
 } else {
-    a = 15;
+    console.log(result);
 }
-
-console.log(a, b, n);
-
-/*Задача 6*/
-let a = 50; // бажана ЗП
-let b = 100; // кількість рядків
-let c = 3; // кількість запізнень
-let e = 20; // розмір штрафу
-
-if (a <= c);
-console.log('вірно');
-
-if (c / 50 * 100) + (e / 3 * 20);
-console.log('40');
-
-if (a / 2 <= c);
