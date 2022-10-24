@@ -1,11 +1,22 @@
-//alert('Hello'); //
+function UserText(userName) {
+    console.log('привіт, ', userName);
+}
 
-let a = Number(prompt('Введіть перше число')); // Вікно з формой для вводу певного рядка
-let b = Number(prompt('Введіть друге число'));
-let result = 4 + 5;
+UserText('Alex');
+UserText('Jo');
+UserText('David як твої справи');
 
-if(Number.isNaN(result)) {
-    console.log('Ти не правий, введи число!');
-} else {
+function chiSlo(number) {
+    let result = Number(number) + 5;
     console.log(result);
 }
+
+chiSlo('5');
+
+function addTwoNumber(num1, num2) {
+    const result = num1 + num2;
+    return result;
+}
+let functionResult = addTwoNumber(2, 5);
+console.log(functionResult);
+
