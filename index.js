@@ -1,22 +1,36 @@
-function UserText(userName) {
-    console.log('привіт, ', userName);
+const age = 15;
+let isAdult = age < 16 ? 'not adult' : 'adult';
+console.log(isAdult);
+
+let login = true;
+let viewMode = login ? 'authMode' : 'unAuth';
+console.log(viewMode);
+
+let montNumber = 3;
+
+switch(montNumber) {
+    case 1: {
+        console.log('Сік');
+        break;
+    }
+    case 2: {
+        console.log('Чай');
+        break;
+    }
+    case 3: {
+        console.log('Кава');
+        break;
+    }
+    case 4: {
+        console.log('Чай');
+        break;
+    }
+    case 5: {
+        console.log('Лимонад');
+        break;
+    }
+    default: {
+        console.log('введіть чісло від 1 до 5');
+        break;
+    }
 }
-
-UserText('Alex');
-UserText('Jo');
-UserText('David як твої справи');
-
-function chiSlo(number) {
-    let result = Number(number) + 5;
-    console.log(result);
-}
-
-chiSlo('5');
-
-function addTwoNumber(num1, num2) {
-    const result = num1 + num2;
-    return result;
-}
-let functionResult = addTwoNumber(2, 5);
-console.log(functionResult);
-
