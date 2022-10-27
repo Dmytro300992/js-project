@@ -1,19 +1,17 @@
-for (i = 0; i < 10; i = i + 3) {
-    console.log(i);
-}
+let obj = {
+        color: 'red',
+        fontSize: 2
+    };
 
-function factorial(num) {
-    if(num < 0) {
-        return null;
+    let bulb = {
+        producer: 'Philips',
+        lightness: 200,
+        power: '200w',
+        cap: 'small',
+        on: function() {
+            return 'The light on!'
+        }
     }
-    if (num === 0 || num === 1) {
 
-    }
-    let result = 1;
-    for (let i = 1; i <= num; i++) {
-        result *= i;
-    }
-    return result;
-}
-
-console.log(factorial(5));
+    console.log(bulb.cap);
+    console.log(bulb.on());
