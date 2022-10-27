@@ -1,11 +1,13 @@
-const cat = {
-    age: 3
+/*Практика*/
+
+function Country(name, population, area) {
+    this.name = name;
+    this.population = population;
+    this.area = area;
+
+    this.getDencity = function() {
+        return this.population / this.area;
+    }
 }
 
-console.log(cat.age);
-
-cat.age = 5;
-console.log(cat.age); // Літеральне створення
-
-const cat2 = Object{};
-const cat3 = new Object{};
+const Ukraine = new Country('Ukraine', '43810', '603700');
