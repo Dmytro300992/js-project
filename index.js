@@ -1,36 +1,19 @@
-const age = 15;
-let isAdult = age < 16 ? 'not adult' : 'adult';
-console.log(isAdult);
-
-let login = true;
-let viewMode = login ? 'authMode' : 'unAuth';
-console.log(viewMode);
-
-let montNumber = 3;
-
-switch(montNumber) {
-    case 1: {
-        console.log('Сік');
-        break;
-    }
-    case 2: {
-        console.log('Чай');
-        break;
-    }
-    case 3: {
-        console.log('Кава');
-        break;
-    }
-    case 4: {
-        console.log('Чай');
-        break;
-    }
-    case 5: {
-        console.log('Лимонад');
-        break;
-    }
-    default: {
-        console.log('введіть чісло від 1 до 5');
-        break;
-    }
+for (i = 0; i < 10; i = i + 3) {
+    console.log(i);
 }
+
+function factorial(num) {
+    if(num < 0) {
+        return null;
+    }
+    if (num === 0 || num === 1) {
+
+    }
+    let result = 1;
+    for (let i = 1; i <= num; i++) {
+        result *= i;
+    }
+    return result;
+}
+
+console.log(factorial(5));
