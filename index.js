@@ -1,31 +1,34 @@
-const obj = {
-    Mon: 'drive lesson',
-    Tru: 'dantist visit',
+/*Задача 3*/
+/*const obj = {
+    Mon: 'driver lesson',
+    Tue: 'dantist visit',
     Wed: 'go to party',
     Thu: 'chill',
-    Fri: 'hard work'
+    Fri: 'hard work',
+    Sat: 'go to park',
 }
 
-console.log('Mon' in obj);
+console.log(obj.Sat);*/
 
-const obj2 = {
-    key1: undefined
+/*const obj = {
+    Mon: 'driver lesson',
+    Tue: 'dantist visit',
+    Wed: 'go to party',
+    Thu: 'chill',
+    Fri: 'hard work',
+    Sat: 'go to park'
 }
 
-let key1 = 'val';
+let day = prompt('Що сьогодні робимо?'. Wed);
 
-console.log(key1 in obj2);
-console.log('key1' in obj2);
+alert(` ${day} go to party!`);
 
-function greeting(user) {
-    return 'Hello' ${'name' in user ? user.name : 'Anonym'};
+/*Задача 4*/
+
+const departmentSalary = {
+    HR: 20000,
+    Development: 30000,
+    Drive: 200,
+    Clining: null,
+    Marketing: 'not salary'
 }
-
-const user1 = {
-    name: 'Vasya'
-}
-
-const user2 = {}
-
-console.log(greeting(user1));
-console.log(greeting(user2));
