@@ -1,36 +1,37 @@
-//concat
-const arr = [1, 2, 3];
-const arr2 = [5, 8, 0];
-const arr3 = arr.concat(arr2); // arr3 = arr1 + arr2
+//slice
+/*const array = [1, 2, 3, 4,];
 
-// fill
-const arrFive = new Array(5);
-arrFive.fill(1);
+console.log(array.slice(3));
+console.log(array.slice(2));
 
-// includes
-const arr6 = [2, 4, 1, 3, 6, 3, 7];
-console.log(arr6.includes(6));
-// indexOf
-console.log(arr6.indexOf(3));
+const users = [
+    {
+        name: 'John',
+        lastName: 'Doe'
+    },
+    {
+        name: 'Jane',
+        lastName: 'Doe'
+    },
+]*/
 
-// join
-const newArr = ['Hello', 'world', 4, 2, 'hi'];
-console.log(newArr.join(' ')); // default separator - ','
+//mutattion
+/*const user = {
+    name: 'Humty Dum'
+}
 
-// push
-const oldArray = [2, 3, 4, 5];
-oldArray.push(6);
+user.isBroken = false;
 
-// pop
-const anotherArray = [5, 6, 7, 8];
-anotherArray.pop();
+const egg = 'Humty Dum';
+egg.isBroken = false;
+console.log(egg);
+console.log(egg.isBroken);*/
 
-// shift
-console.log(anotherArray.shift());
+//splice
+const arr = [1, 2, 3, 4, 5];
 
-// unshift
-anotherArray.unshift(3, 6, 55);
+//console.log(arr.splice(2,1));
+//console.log(arr);
 
-// reverse
-const arr10 = [1, 2, 3, 4, 5, 6];
-arr10.reverse();
+console.log(arr.splice(1, 0, 'hello'));
+console.log(arr);
