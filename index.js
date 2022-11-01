@@ -1,66 +1,71 @@
-/*28.10.2022
-Задача 3*/
+let userTel1 = '3805465465465';
+let userTel2 = '3805165161565';
+let userTel3 = '4654351321232';
 
-const obj = {
-    Mon: 'driver lesson',
-    Tue: 'dantist visit',
-    Wed: 'go to party',
-    Thu: 'chill',
-    Fri: 'hard work',
-    Sat: 'go to park'
+const userTels = {
+    0: '3805465465465',
+    1: '3805165161565',
+    2: '4654351321232'
 }
 
-let userValue = prompt('Type your week day your plan: \n Monday = Mon, \n Tusdey = Tue ... e.t.c');
-alert(obj[userValue] ? obj[userValue] : 'Nothing planned');
+// Array
 
-/*Задача 4
-Написати функцію, яка повертає загальну суму, витрачену на зарплатню всіх відділів
-const departmentSalary = {
-    HR: 20000,
-    Development: 30000,
-    Drive: 200,
-    Clining: null,
-    Marketing: 'not salary'
+const arr = [2, 4, 6, 7];
+const arr2 = new Array(2, 4, 6, 7);
+
+///////
+
+
+// вивести значення всіх елементів масиву array на єкран
+const array = [7, 3, 5, 2];
+array[0];
+array[1];
+array[2];
+array[3];
+
+for (let i = 0; i < array.length; i++) {
+    console.log(
+        array[i]
+    );
 }
-(for .. in)*/
 
-const departmentSalary = {
-    HR: 20000,
-    Development: 30000,
-    Drive: 200,
-    Clining: null,
-    Marketing: 'not salary'
-}
+/*
+Задача 1
+Дан масив [3, 6, 8, 2, 3, 5, 1].
+Напишіть функцію, яка приймає масив в якості аргументу і повертає суму всіх елементів масиву.
+Наприклад: [1, 2, 3] // sum: 1 + 2 + 3 = 6
+*/
+const arr1 = [3, 6, 8, 2, 3, 5, 1];
 
-function sumSalary(salaryObj) {
-    let result = 0;
+function sumArray(array) {
+    let sum = 0;
 
-    for(let key in salaryObj) {
-        if(typeof salaryObj[key] === 'number') {
-            result = result + salaryObj[key];
+    for(let i = 0; i < array.length ; i++) {
+        if(typeof array[i] === 'number') {
+            sum = sum + array[i];
         }
     }
 
-    return result;
+    return sum;
 }
 
-console.log(sumSalary(departmentSalary));
+console.log(sumArray(arr1));
 
 /*
-Задача 5
-Написати функцію, яка приймає об'єкт і виводить всі значення всіх властивостей, оформлені у *....*
-const obj = {
-    key1: value2
-}
-// "key1": *value2*
-(for ... in)
+Задача 3
+Написати функцію, яка знаходить середнє арифметичне всіх елементів масиву.
+[3, 6, 8, 2, 3, 5, 1] // 4
 */
 
-
-function stylingConsole(obj) {
-    for(let key in obj) {
-        console.log(`"${key}": *${obj[key]}*`);
+function average(array) {
+    let sum = 0;
+    for(let i = 0; i < array.length; i++) {
+        if(typeof array[i] === 'number') {
+            sum += array[i]
+        }
     }
+    return sum / array.length;
 }
 
-stylingConsole(obj);
+
+console.log(average(arr1));
