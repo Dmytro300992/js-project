@@ -1,97 +1,60 @@
-/*Задача 5*/
-const users = [
-    {
-        name: 'John',
-        lastName: 'Doe',
-        age: 18,
-        email: 'meil@com'
-    },
-    {
-        name: 'Jane',
-        lastName: 'Doe',
-        age: 20,
-        email: 'meil@com'
-    },
-    {
-        name: 'Josh',
-        lastName: 'Doe',
-        age: 17,
-        email: 'meil@com'
-    },
-    {
-        name: 'Jake',
-        lastName: 'Doe',
-        age: 21,
-        email: 'meil@com'
-    },
-    {
-        name: 'Jackson',
-        lastName: 'Doe',
-        age: 17,
-        email: 'meil@com'
-    },
-]
-
-function newUserObject(user) {
-    return {
-        fullName: `${user.name} ${user.lastName}`,
-        age: user.age,
-        email: user.email
-    }
+/*function t() {
+console.log(arguments);
 }
 
-const newUsersArray = users.map(newUserObject);
-/*Задача 4*/
-/*const arr = [2, 44, 11, 234, 8, 2, 4, 1];
-//const arr2 = [2, 8, 2];
-//const arr3 = [4, 1];
+console.log(t);
+console.dir(t);
 
-const newArray = arr.map((item) => {
-    return item ** 8;
-});
+t(1,2,3,4,5);
 
-//const newArray2 = arr2.map((item) => {
-    //return item ** 4;
-//});
+function sum(a,b) {
+    console.log(arguments);
+    return a + b;
+}
 
-//const newArray3 = arr3.map((item) => {
-    //return item ** 6;
-//});*/
+console.log(sum(2, 6, 23, 65, 123, 3432));*/
 
+/*Задача
+const array = [5,9,3,7,10];
 
-/*Задача 5*/
-/*const users = [
-    {
-        name: 'John',
-        lastName: 'Doe',
-        age: 18,
-        email: 'meil@com'
-    },
-    {
-        name: 'Jane',
-        lastName: 'Doe',
-        age: 20,
-        email: 'meil@com'
-    },
-    {
-        name: 'Josh',
-        lastName: 'Doe',
-        age: 17,
-        email: 'meil@com'
-    },
-    {
-        name: 'Jake',
-        lastName: 'Doe',
-        age: 21,
-        email: 'meil@com'
-    },
-    {
-        name: 'Jackson',
-        lastName: 'Doe',
-        age: 17,
-        email: 'meil@com'
-    },
-]
+function compareFunction(a, b) {
+    if (b > a) {
+        return -1;
+    } else {
+        return 1;
+    }
+}
+array.sort(compareFunction);
+console.log(array);*/
 
-//console.log(users.slice(name, lastName));
-//console.log(users);*/
+const arrayWorlds = ['bbb', 'aba'];
+
+arrayWorlds.sort();
+console.log(arrayWorlds);
+
+/*Задача
+const array = [5,3,9,21,5,1,2,4,56];
+
+function compareFunction(a, b) {
+    if (b < a) {
+        return -1;
+    } else {
+        return 1;
+    }
+}
+array.sort(compareFunction);
+console.log(array);*/
+
+//filter
+
+const array = [2, 16, 20, 80, 5];
+
+function filterFunc(item) {
+   if(item > 0) {
+          return true;
+   } else {
+        return false;
+   }
+}
+
+const filteredArray = array.filter(filterFunc);
