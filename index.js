@@ -1,52 +1,97 @@
-/*Задача 1*/
-/*const arr = [1, 2, 3, 4, 5];
-arr.splice(3, 4);*/
+/*Задача 5*/
+const users = [
+    {
+        name: 'John',
+        lastName: 'Doe',
+        age: 18,
+        email: 'meil@com'
+    },
+    {
+        name: 'Jane',
+        lastName: 'Doe',
+        age: 20,
+        email: 'meil@com'
+    },
+    {
+        name: 'Josh',
+        lastName: 'Doe',
+        age: 17,
+        email: 'meil@com'
+    },
+    {
+        name: 'Jake',
+        lastName: 'Doe',
+        age: 21,
+        email: 'meil@com'
+    },
+    {
+        name: 'Jackson',
+        lastName: 'Doe',
+        age: 17,
+        email: 'meil@com'
+    },
+]
 
-/*Задача 3*/
-/*const arr = [1,2,3,4,5];
+function newUserObject(user) {
+    return {
+        fullName: `${user.name} ${user.lastName}`,
+        age: user.age,
+        email: user.email
+    }
+}
 
-console.log(arr.splice(1, 0, 'w' ));
-console.log(arr.splice(2, 0, 're-td' ));
-console.log(arr.splice(7, 0, 'vv' ));
-console.log(arr.splice(6, 0, 'aa' ));
-console.log(arr)*/
-
-
-/*arr.splice(1,0,'w','re-td');
-arr.splice(6,0,'vv');
-arr.splice(8,0,'aa');
-console.log(arr);*/
-
+const newUsersArray = users.map(newUserObject);
 /*Задача 4*/
+/*const arr = [2, 44, 11, 234, 8, 2, 4, 1];
+//const arr2 = [2, 8, 2];
+//const arr3 = [4, 1];
 
-/*const arr1 = [1, 2, 3, 4, 5];
-const arr2 = [1, 2, 2, 3, 4];
+const newArray = arr.map((item) => {
+    return item ** 8;
+});
 
-function number(arr5, arr10) {
-    if(arr1 === true) {
-        return true;
-    }
-    if(arr2 == false) {
-        return false;
-    }
-}
+//const newArray2 = arr2.map((item) => {
+    //return item ** 4;
+//});
 
-console.log(number());*/
+//const newArray3 = arr3.map((item) => {
+    //return item ** 6;
+//});*/
 
-/*function saySomething(howToSay, whatToSay) {
-    howToSay(whatToSay);
-}
 
-saySomething(alert, 'Hello');
-console.log(saySomething);*/
+/*Задача 5*/
+/*const users = [
+    {
+        name: 'John',
+        lastName: 'Doe',
+        age: 18,
+        email: 'meil@com'
+    },
+    {
+        name: 'Jane',
+        lastName: 'Doe',
+        age: 20,
+        email: 'meil@com'
+    },
+    {
+        name: 'Josh',
+        lastName: 'Doe',
+        age: 17,
+        email: 'meil@com'
+    },
+    {
+        name: 'Jake',
+        lastName: 'Doe',
+        age: 21,
+        email: 'meil@com'
+    },
+    {
+        name: 'Jackson',
+        lastName: 'Doe',
+        age: 17,
+        email: 'meil@com'
+    },
+]
 
-//map metod
-function square(a) {
-    return a*a;
-}
-
-const array = [1,2,3,4,5];
-
-const newArray = array.map((item) => {
-    return item ** 2;
-})
+//console.log(users.slice(name, lastName));
+//console.log(users);*/
