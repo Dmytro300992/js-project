@@ -1,68 +1,44 @@
-//reduser
-/*const array = [2,3,5,69];
+/*MyAraay*/
+/*function MyArray() {
+    this.length = 0;
 
-function reduser(accumulator, item) {
-    return accumulator + item;
+    this.push = function(value) {
+        // push - добавляет єлемент, которій нам передают в конец массива
+        // изначально, длина массива (this.length = 0)
+        // куда добавлять? = что нам нужно добавить?
+        // this[this.length] = value;
+        // this.length++;
+
+        this[this.length] = value; // this[key] = value
+        this.length++;
+        return this.length;
+    }
+
+    this.pop = function() {
+        if(this.length > 0 ) {
+            let lastItem = this[this.length - 1];
+            delete this[this.length - 1];
+            this.length--;
+            return lastItem;
+        } 
+    }
 }
 
-const sum = array.reduce(reduser, 0);*/
+const arr = new MyArray();*/
 
-const catArray = [
-    {
-        name: 'Murzik',
-        color: 'black',
-        weight: 3,
-        age: 2
-    },
-    {
-        name: 'Murka',
-        color: 'grey',
-        weight: 5,
-        age: 3
-    },
-    {
-        name: 'Barsik',
-        color: 'red',
-        weight: 2,
-        age: 1
-    },
-    {
-        name: 'Cookie',
-        color: 'brown',
-        weight: 5,
-        age: 2
-    },
-    {
-        name: 'Stus',
-        color: 'grey',
-        weight: 2,
-        age: 5
-    },
-    {
-        name: 'Fagot',
-        color: 'black',
-        weight: 5,
-        age: 3
-    },
-    {
-        name: 'Kit',
-        color: 'pink',
-        weight: 2,
-        age: 1
-    },
-]
+const cat = {
+    name: 'Barsik',
+    color: 'red',
+    age: 1
+};
 
-// 1. Відсортувати котів за вагою на збільшення
-catArray.sort((cat1, cat2) => {
-    if(cat1.weight < cat2.weight) {
-        return -1;
-    } else {
-        return 1;
+const catMethods = {
+    run: function() {
+        console.log('Cat is running');
+    },
+    meow: function() {
+        console.log('Meow');
     }
-});
+}
 
-/* returning:
--1 -> cat1, cat2
-0 -> всі на місці
-1 -> cat2, cat1
-*/
+cat.__proto__ = catMethods;
