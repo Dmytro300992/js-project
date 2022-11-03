@@ -1,60 +1,68 @@
-/*function t() {
-console.log(arguments);
+//reduser
+/*const array = [2,3,5,69];
+
+function reduser(accumulator, item) {
+    return accumulator + item;
 }
 
-console.log(t);
-console.dir(t);
+const sum = array.reduce(reduser, 0);*/
 
-t(1,2,3,4,5);
+const catArray = [
+    {
+        name: 'Murzik',
+        color: 'black',
+        weight: 3,
+        age: 2
+    },
+    {
+        name: 'Murka',
+        color: 'grey',
+        weight: 5,
+        age: 3
+    },
+    {
+        name: 'Barsik',
+        color: 'red',
+        weight: 2,
+        age: 1
+    },
+    {
+        name: 'Cookie',
+        color: 'brown',
+        weight: 5,
+        age: 2
+    },
+    {
+        name: 'Stus',
+        color: 'grey',
+        weight: 2,
+        age: 5
+    },
+    {
+        name: 'Fagot',
+        color: 'black',
+        weight: 5,
+        age: 3
+    },
+    {
+        name: 'Kit',
+        color: 'pink',
+        weight: 2,
+        age: 1
+    },
+]
 
-function sum(a,b) {
-    console.log(arguments);
-    return a + b;
-}
-
-console.log(sum(2, 6, 23, 65, 123, 3432));*/
-
-/*Задача
-const array = [5,9,3,7,10];
-
-function compareFunction(a, b) {
-    if (b > a) {
+// 1. Відсортувати котів за вагою на збільшення
+catArray.sort((cat1, cat2) => {
+    if(cat1.weight < cat2.weight) {
         return -1;
     } else {
         return 1;
     }
-}
-array.sort(compareFunction);
-console.log(array);*/
+});
 
-const arrayWorlds = ['bbb', 'aba'];
-
-arrayWorlds.sort();
-console.log(arrayWorlds);
-
-/*Задача
-const array = [5,3,9,21,5,1,2,4,56];
-
-function compareFunction(a, b) {
-    if (b < a) {
-        return -1;
-    } else {
-        return 1;
-    }
-}
-array.sort(compareFunction);
-console.log(array);*/
-
-//filter
-
-const array = [2, 16, 20, 80, 5];
-
-function filterFunc(item) {
-   if(item > 0) {
-          return true;
-   } else {
-        return false;
-   }
-}
-
-const filteredArray = array.filter(filterFunc);
+/* returning:
+-1 -> cat1, cat2
+0 -> всі на місці
+1 -> cat2, cat1
+*/
