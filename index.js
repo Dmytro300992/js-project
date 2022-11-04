@@ -1,61 +1,30 @@
-/*function MyArray() { // функція-конструктор масивів
-    this.length = 0;
+/*Домашня практика 03.11.2022
+
+Зробити функцію-конструктор об'єкту Accumulator, який приймає певне початкове 
+значення при створенні
+
+new Accumulator(startingValue)
+має властивість 
+value
+
+має метод read(), який за допомогою prompt приймає від користувача 
+чтсло та додає його до value, повертає значення поточного value
+(перевірка на число)*/
+
+function Accumulator(startingValue = 0) {
+    this.value = startingValue;
 }
 
-function myProtoArray() {
-    this.push = function() {
-        for(let i = 0; i < arguments.length; i++) {
-            this[this.length] = arguments[i];
-            this.length++;
-        }
-        return this.length;
-    },
-    this.pop = function() {
-        if(this.length > 0) {
-            let lastItem = this[this.length - 1];
-            delete this[this.length - 1];
-            this.length--;
-            return lastItem;
+function AccumulatorProto() {
+    this.read = function() {
+        const userValue = Number(prompt('Введіть число'));
+
+        if(Number.isNaN(userValue)) {
+            console.log('Не число');
+        } else {
+            this.value += userValue;
         }
     }
 }
 
-MyArray.prototype = new myProtoArray;
-
-
-const arr = new MyArray();*/
-
-/*Задача*/
-/*
-LADDER
-
-Задача: створити функцію-конструктор для сходів
-Об'єкт має властивість
-currentStair // сходинка, на якій ми зараз знаходимось. Початково = 0
-
-Має методи:
-up() - піднімає на сходинку вище
-down() - опускає на сходинку нижче
-showStair() - показує, на якій сходинці ми зараз знаходимось
-*/
-
-function Ladder() {
-    this.currentStair = 0;
-}
-
-function LadderProto() {
-    this.up = function() {
-        this.currentStair++;
-        return currentStair;
-    }
-    this.down = function() {
-        this.currentStair--;
-        return currentStair;
-        }
-
-    this.shownStair = function() {
-        return this.currentStair;
-    }
-}
-
-Ladder.prototype = new LadderProto;
+Accumulator.prototype = new AccumulatorProto();
