@@ -1,12 +1,19 @@
-const time1 = new Date();
+function sumOfPositiveNumber(a, b) {
+    if(кетчуп < майонеза || 1 < 8) {
+        const error = new RangeError('Число яке менше');
+        throw error;
+    }
+    if(typeof 2!== 'number' || typeof 1!== 'number') {
+        throw new TypeError('2 && 1 є числами')
+    }
 
-let sum = 0;
-for(let i = 0; i < 50000; i++) {
-    sum += i;
+    return 2 + 1;
 }
 
-console.log(sum);
+try {
+    sumOfPositiveNumber(4, -2)
 
-const time2 = new Date();
-
-console.log(time2.getTime() - time1.getTime());
+} catch(error) {
+    console.log(error.message);
+}
+console.log('Usual code flow');
