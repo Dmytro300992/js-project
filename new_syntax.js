@@ -1,63 +1,58 @@
-// Class
-/* 
-class MyClass {
-    // поля і методи класу
-    constructor() {...}
-    method1() {...}
-    method2() {...}
-    method3() {...}
-    ...
-}
-*/
+/*Задача
+class Fuel {
+    constructor(volume, density) {
+        this.volume = volume;
+        this.density = density;
+    }
 
-class User {
-    constructor(name, lastName, age) {
+    getWeight() {
+        return this.volume * this.density;
+    }
+}
+
+const diesel = new Fuel(50, 0.9);
+const a95 = new Fuel(99, 0.3);
+
+const MIDDLE_WEIGHT_PASSANGER = 80
+
+class Auto {
+    constructor(name, ownWeight, fuel) {
         this.name = name;
-        this.lastName = lastName;
-        this.age = age;
+        this.ownWeight = ownWeight;
+        this.fuel = fuel;
+        this.passanger = this.passanger;
     }
 
-    getFullName() {
-        return `${this.name} ${this.lastName}`
+    getMassa() {
+        return this.ownWeight + this.fuel.getWeight() + (this.passanger * MIDDLE_WEIGHT_PASSANGER)
     }
 }
 
-const user1 = new User('John', 'Doe', 56);
-const user2 = new User('Jane', 'Doe', 68);
+const auto = new Auto('Audi', 2500, diesel);
+const auto1 = new Auto('Lexus', 2500, a95);*/
 
-/*
-Написати клас Worker.
-У працівника є ім'я, прізвище, ставка за робочий день і кількість відпрацьованих днів у цьому місяці
-Написати метод, який повертає зарплатню цього робітника за поточний місяць
-*/
-
-const MIN_ZP = 6700;
-const WORK_DAYS = 21;
-
-const MIN_RATE = MIN_ZP / WORK_DAYS;
-
-class Worker {
-    constructor(name, lastName, rate = MIN_RATE, days = WORK_DAYS) {
+class Friend {
+    constructor(name, money, friend) {
         this.name = name;
-        this.lastName = lastName;
-        this.rate = rate;
-        this.days = days;
+        this.money = money;
+        this.friend = friend;
     }
 
-    getSalary() {
-        return this.rate * this.days;
+    getFullMoney() {
+        if(this.friend === null) {
+            return this.money;
+        }
+        if(Array.isArray(this.friend)) {
+            return this.money + this.friend.reduce((sum, friend) => sum + friend.getFullMoney(), 0);
+        }
+        return this.money + this.friend.getFullMoney();
     }
 }
 
-const wrkr = new Worker('John', 'Doe', 300, 12);
-const wrkr2 = new Worker('Jane', 'Doe');
+const friend1 = new Friend('Igor', 5, null);
+const friend2 = new Friend('Alex', 15, null);
 
 
-// Параметри за замовченням
-
-function sum(a = 10, b = 5) {
-    console.log(a, b);
-}
-
-sum(3, 2);
-sum();
+//const friendOfMyFriend = new Friend('Sasha', 25, null);
+const myFriend = new Friend('Den', 20, [friend1, friend2]);
+const me = new Friend('Dima', 10, myFriend);
