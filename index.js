@@ -1,152 +1,107 @@
-//staticMethod
-
-/*class Test {
-    constructor(value1, value2) {
-        this.key1 = value1;
-        this.key2 = value2;
-    }
-
-    method() {
-
-    }
-
-        static newMethod2(value) {
-            console.log('Статичний метод всередині класу')
-        }
-
-    }
-
-
-Test.newMethod = function() {
-    console.log('Статичний медод пока класом');
-
-
-}
-
-const obj1 = new Test();
-obj1.method();*/
-
-/*Практика 10.11.2022
-
-Задача 1
-
-Напишіть клас RangeValidator
-дві властивості:
-from, to
-
-from не може бути більше to
-
-Завдання:
-1. реалізувати сеттери для обох властивостей
-2. геттер getRange, який має повертати масив цілих чисел цього діапазону*/
-
 /*
-class RangeValidator {
-    constructor(from, to) {
-        this.to = to; // this._to
-        this.from = from;
-    }
+Практика на вихідні 11.11.2022
 
-    set from(value) {
-        if(typeof value !== 'number') {
-            throw new TypeError('From must be a number');
-        }
-        if(value > this._to) {
-            throw new RangeError('To must be a larger than from')
-        }
-        this._from = value;
-    }
+Є ферма.
+На фермі в нас є свійські тварини (корови, кози).
+Є домашні тварини (кошки і собаки).
 
-    set to(value) {
-        if(typeof value !== 'number') {
-            throw new TypeError('To must be a number');
-        }
-        this._to = value;
-    }
+В кожної тварини є діти. В кожного з дітей може бути певна кількість дітей.
 
-    get to() {
-        return this._to;
-    }
+Реалізувати класи всіх тварин і додати тваринам певну кількість дітей 
+(кількість дітей вказуєте у конструкторі під час стоврення єкземпляру об'єкту).
 
-    get from() {
-        return this._from;
-    }
+Просунутий рівень (задача *****):
+Реалізувати функцію, яка підрахує кількість тварин на фермі.
 
-    get getRange() {
-        const arr = [];
-        for(let i = this._from; i <= this._to; i++) {
-            arr.push(i);
-        }
-        return arr;
-    }
-
-    validate(num) {
-        return this.getRange.includes(num);
-    }
-}
+Друзі, це задача досить важка.
+Тому, якщо у вас щось не вийде - будь-ласка, не засмучуйтеся.
+Ми обов'язково вирішимо цю задачу разом.
+Все буде добре =)
+Важкий матеріал по ООП ми пройшли. Всіх вітаю)
+Наступний тиждень буде легший)
 */
 
-/*
-class Animal {
-    constructor(color, name, tail) {
-        this.name = name;
-        this.color = color;
-        this.tail = tail;
-    }
+/*class Farm {
+	constructor(cows) {
+		this.cows = cows;
+	}
 
-    eat() {
-        return `${this.name} is eating`
+	Sell() {
+		if (this.canSell()) {
+			this.cows = this.cows - 1;
+		}
+	}
+	
+	canSell(cows) {
+		if (cows > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+}
+
+var farm = new Farm(10);
+farm.Sell(10, 20);*/
+
+class Animal {
+    constructor() {
+        this.childs = null;
+    }
+}
+
+class Cat extends Animal {
+    constructor() {
+        super();
     }
 }
 
 class Dog extends Animal {
-    constructor(color, name, tail) {
-        super(color, name, tail);
-    }
-
-    barking() {
-        return `${this.name} is barking`
-    }
-}
-*/
-
-class User {
-    constructor(name, surname, age) {
-        this.name = name;
-        this.surname = surname;
-        this.age = age;
-    }
-
-    getFullName() {
-        return `${this.name} ${this.surname}`;
+    constructor() {
+        super();
     }
 }
 
-class Moderator extends User {
-    constructor(name, surname, age) {
-        super(name, surname, age);
-    }
-
-    createPost(header, text) {
-        console.log('Create post')
-    }
-
-    deletePost(index) {
-        console.log('Delete post')
+class Cow extends Animal {
+    constructor() {
+        super();
     }
 }
 
-class Admin extends Moderator {
-    constructor(name, surname, isAdmin) {
-        super(name, surname, null);
-        this.isAdmin = isAdmin;
-    }
-
-    setModerator() {
-        console.log('Set moderator')
-    }
-
-    deleteModerator() {
-        console.log('Delete moderator')
+class Goat extends Animal {
+    constructor() {
+        super();
     }
 }
+
+/**
+ * Функція створення ферми
+ * @param {Animal (or Cat, Dog, Cow, Goat)} Type 
+ * @param {number} quantity 
+ */
+
+function createFamily(Type, quantity) {
+    const animals = new Array(quantity).fill(new Type());
+    animals.forEach(animal => {
+        const childs = new Array(quantity).fill(new Type());
+        animal.childs = childs;
+    })
+    return animals;
+}
+
+/**
+ * 
+ * @param {Array of Animals} farm 
+ */
+
+function countFarm(farm) {
+    return farm.reduce((accum, item) => {
+        if(item.childs) {
+            return accum + 1 + item.childs.length;
+        }
+    }, 0)
+}
+
+// const farm = [...createFamily(Cat, 3), ...createFamily(Dog, 2), ...createFamily(Cow, 5), ...createFamily(Goat, 1)];
+
+const farm = [...createFamily(Cat, 1), ...createFamily(Dog, 1)];
